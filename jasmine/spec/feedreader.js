@@ -49,22 +49,35 @@ $(function() {
             });
         });
     });
-
-    /* TODO: Write a new test suite named "The menu" */
-
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
+    
+    
+    /* This suite is all about the left menu visibility*/
+    describe('The menu', function() {
+        
+        /* This tests to make sure that the menu element is
+         * hidden by default.
          */
+        it('should be hidden by default', function(){
+            expect(document.body.classList.item(0)).toBe('menu-hidden');
+        });
 
-         /* TODO: Write a test that ensures the menu changes
+        /* This tests to make sure the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+         it('should changes visibility', function(){
+            let menuIcon = $('.menu-icon-link');
+            menuIcon.click();
+            expect(document.body.classList.item(0)).toBe(null);
+            menuIcon.click();
+            expect(document.body.classList.item(0)).toBe('menu-hidden');
+        });
+        
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('',function(){
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -72,6 +85,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
