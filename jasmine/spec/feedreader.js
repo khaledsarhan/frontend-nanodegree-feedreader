@@ -57,7 +57,7 @@ $(function () {
          * hidden by default.
          */
         it('should be hidden by default', function () {
-            expect(document.body.classList.item(0)).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
         /* This tests to make sure the menu changes
@@ -68,9 +68,9 @@ $(function () {
         it('should changes visibility when the menu icon is clicked', function () {
             let menuIcon = $('.menu-icon-link');
             menuIcon.click();
-            expect(document.body.classList.item(0)).toBe(null);
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             menuIcon.click();
-            expect(document.body.classList.item(0)).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
     });
@@ -101,18 +101,35 @@ $(function () {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        let oldFeed;
+        let prevFeed;
+        let newFeed;
         beforeEach(function (done) {
-            loadFeed(1, done);
-            oldFeed = $('.feed').html();
+
+            loadFeed(0, function () {
+
+                // feed 0 done loading
+
+                prevFeed = $('.feed').html();
+
+                loadFeed(1, function () {
+
+                    // feed 1 done loading
+
+                    newFeed = $('.feed').html();
+
+                    done();
+
+                });
+            });
+
         });
 
-        it('should has the content actually changes', function(done){ 
-            loadFeed(0, done);
-            expect($('.feed').html()).not.toEqual(oldFeed);
+        it('should has the content actually changes', function (done) {
+            expect(prevFeed).not.toEqual(newFeed);
             done();
         });
-
     });
+
+
 
 }());

@@ -1,15 +1,17 @@
 # Project Overview
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+In this project, we were given a premade RSS-Feed web app and were required to implement some testing for it. The goal of this project was to become familiar with Jasmine, and successfully write a test suite for the given app.
 
+#Testing the application
+To pass the test:
 
-## Why this Project?
+* All feeds variable has been defined and that it is not empty.
+* Each feed should has a URL defined and that the URL is not empty.
+* Each feed should has a name defined and that the name is not empty.
+* Ensures the menu element is hidden by default.
+* Make sure the menu changes visibility when the menu icon is clicked.
+* Ensures when a new feed is loaded by the loadFeed function that the content actually changes.
+* All the Jasmine App Tests you can see below the RSS feed item list.
 
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
-
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
-
-
-## How to run
-
-Open the home page to see the Jasmine running tests at the end of the page.
+#Build with
+1. [Jasmine](https://github.com/jasmine/jasmine)
