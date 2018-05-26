@@ -33,7 +33,9 @@ $(function () {
         it('each feed should has a url defined', function () {
             allFeeds.forEach(element => {
                 expect(element.url).toBeDefined();
+                expect(element.url).not.toBe(null);
                 expect(element.url).not.toBe('');
+                expect(element.url.length).toBeGreaterThan(0);
             });
         });
 
@@ -44,7 +46,9 @@ $(function () {
         it('each feed should has a name defined', function () {
             allFeeds.forEach(element => {
                 expect(element.name).toBeDefined();
+                expect(element.name).not.toBe(null);
                 expect(element.name).not.toBe('');
+                expect(element.name.length).toBeGreaterThan(0);
             });
         });
     });
@@ -75,7 +79,7 @@ $(function () {
 
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    /* A new test suite named "Initial Entries" */
     describe('Initial Entries', function () {
 
         /*A test that ensures when the loadFeed
@@ -94,7 +98,7 @@ $(function () {
 
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* A new test suite named "New Feed Selection" */
     describe('New Feed Selection', function () {
 
         /* A test that ensures when a new feed is loaded

@@ -13,5 +13,10 @@ To pass the test:
 * Ensures when a new feed is loaded by the loadFeed function that the content actually changes.
 * All the Jasmine App Tests you can see below the RSS feed item list.
 
+# Steps to Run
+1. Download the repo.
+2. Navigate to index.html and open it in the browser of your choice.
+3. After loading, the test results should be displayed at the bottom of the page.
+
 # Build with
 1. [Jasmine](https://github.com/jasmine/jasmine)
